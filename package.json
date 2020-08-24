@@ -1,5 +1,5 @@
 {
-  "homepage": "https://huukhang1512.github.io/",
+  "homepage": "http://huukhang1512.github.io/amazon-qc",
   "name": "amazon-qc",
   "version": "0.1.0",
   "private": true,
@@ -42,7 +42,7 @@
     ]
   },
   "devDependencies": {
-    "serverless-finch": "^2.6.0",
-    "gh-pages" : "^2.0.1"
+    "gh-pages": "^2.2.0",
+    "serverless-finch": "^2.6.0"
   }
 }
