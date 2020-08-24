@@ -1,5 +1,6 @@
 {
-  "name": "amazon-return",
+  "homepage": "https://huukhang1512.github.io/",
+  "name": "amazon-qc",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,6 +19,8 @@
     "react-scripts": "3.4.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,6 +42,7 @@
     ]
   },
   "devDependencies": {
-    "serverless-finch": "^2.6.0"
+    "serverless-finch": "^2.6.0",
+    "gh-pages" : "^2.0.1"
   }
 }
