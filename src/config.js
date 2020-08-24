@@ -1,0 +1,1 @@
+export const URL = "https://teachablemachine.withgoogle.com/models/Au2KHvjcc/";

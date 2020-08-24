@@ -26,9 +26,9 @@ class Input extends React.Component {
       <div className={classes.root}>
         <AppBar className={classes.appBar} position ="fixed" style={{ backgroundColor: "#333333" }}>
           <div className = {classes.headerText}>
-            <img src="https://pngimg.com/uploads/amazon/amazon_PNG5.png" width="25px" height="25px" className={classes.logo}></img>
+            <img src="https://pngimg.com/uploads/amazon/amazon_PNG5.png" width="25px" height="25px" className={classes.logo} alt ="logo"></img>
             <IconButton style={{ borderRadius: 0 }}>
-              <Typography variant ="body2" className={classes.appBarText}>Purchase History</Typography>
+              <Typography variant ="body2" className={classes.appBarText}>Commit to buy</Typography>
             </IconButton>
           </div>
         </AppBar>
@@ -39,7 +39,7 @@ class Input extends React.Component {
                 <CardHeader className={classes.cardHead}
                   title={p}
                   subheader={date.getFullYear()}
-                  action={<Button onClick={()=>{this.props.history.push("/return")}}>Return</Button>}
+                  action={<Button onClick={()=>{this.props.history.push("/process")}}>Place an order</Button>}
                   >
                 </CardHeader>
               </Card>

@@ -5,7 +5,7 @@ plugins:
   - serverless-finch
 custom:
   client:
-    bucketName: amazon-return-frontend-${self:provider.stage}
+    bucketName: amazon-qc-${self:provider.stage}
     distributionFolder: ../build
     errorDocument: index.html
 

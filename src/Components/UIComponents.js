@@ -13,10 +13,7 @@ export const styles = theme => ({
         width: '100vw',
         position: "fixed",
         alignItems: 'center',
-        top : "40%",
-        [theme.breakpoints.down('sm')]: {
-          top : "35%",
-        },
+        top : "20%",
     },
     inputName:{
       color : "white",
@@ -24,8 +21,7 @@ export const styles = theme => ({
     },
     inputId: {
         height : 57,
-        borderRadius : 25,
-        fontWeight: "bolder",
+        borderRadius : "1em",
         background : "#f9f9f9",
         padding : "0 15px",
         boxShadow: '5px 5px 5px 0 rgba(0,0,0,.3)',
@@ -217,6 +213,9 @@ export const styles = theme => ({
       boxShadow: '2px 2px 2px 0 rgba(0,0,0,.3)',
       right : theme.spacing(11),
     },
+    form:{
+      padding : 20
+    },
     speedDialIcon:{
       background : 'linear-gradient(45deg, #545454 30%, #333333 90%)' 
     },
@@ -258,19 +257,21 @@ export const styles = theme => ({
       position : "relative",
     },
     quesSend:{
-      display: 'inline-block',
+      textAlign : "center",
+      display: 'flex',
+      margin : 'auto',
+      flexDirection: "column",
       position : "relative",
       width : "100%",
       },
     inputQues:{
       position : "relative",
-      width : "100%",
       color : "white",
+      padding : 10,
       backgroundColor : "#545454",
       justifyContent : "center",
       overflowX : "hidden",
       maxHeight: "30vh",
-      padding : "7px 50px 7px 7px",
     },
     cardHead:{
         borderBottom: "1px solid #edeaea"
