@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "93cda9ec7880d90abaf30ed26d8978ea",
+    "revision": "3dc059ea6351e18a3751b101f0a7e026",
     "url": "/Amazon-qc/index.html"
   },
   {
-    "revision": "e656b63928f1e2a843b3",
+    "revision": "b064fca992ec6372a622",
     "url": "/Amazon-qc/static/css/main.c8cbea65.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Amazon-qc/static/js/2.07a160e5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e656b63928f1e2a843b3",
-    "url": "/Amazon-qc/static/js/main.c3767e2a.chunk.js"
+    "revision": "b064fca992ec6372a622",
+    "url": "/Amazon-qc/static/js/main.b4fb5697.chunk.js"
   },
   {
     "revision": "a14024234c0fab191262",
