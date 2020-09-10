@@ -1,10 +1,14 @@
 import React from 'react';
 import Input from "./Components/Input";
-import Proccess from "./Components/Process";
+import NewInput from "./Components/NewInput";
 import Output from "./Components/Output";
+import Help from "./Components/Help"
+import Proccess from "./Components/Process";
+import TrainTheModel from "./Components/TrainTheModel";
+import About from "./Components/About";
 import { createBrowserHistory } from "history";
 import NotFound from "./Components/NotFound";
-import { Router,Switch,Route } from "react-router-dom";
+import { HashRouter,Switch,Route } from "react-router-dom";
 
 import './App.css';
 const customHistory = createBrowserHistory();
@@ -12,24 +16,34 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <Router history={customHistory}> 
-            <div>
+        <HashRouter history={customHistory}> 
               <Switch>
                 <Route exact path="/">
                   <Input></Input>
                 </Route>
+                <Route exact path="/Amazon-qc">
+                  <Input></Input>
+                </Route>
+                <Route exact path="/input">
+                  <NewInput></NewInput>
+                </Route>
                 <Route exact path="/process">
                   <Proccess></Proccess>
                 </Route>
-                <Route exact path="/done">
-                  <Output></Output>
+                <Route exact path="/help">
+                  <Help></Help>
+                </Route>
+                <Route exact path="/about">
+                  <About></About>
+                </Route>
+                <Route exact path="/train">
+                  <TrainTheModel></TrainTheModel>
                 </Route>
                 <Route>
-                  <NotFound></NotFound>
+                  <NotFound></NotFound> 
                 </Route>
               </Switch>
-            </div>
-          </Router>
+          </HashRouter>
       </div>
     );
   }

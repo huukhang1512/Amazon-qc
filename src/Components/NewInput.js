@@ -3,21 +3,19 @@ import { withRouter } from "react-router-dom";
 
 //UI
 import {
-  Button, Tooltip, Typography, AppBar, Card, CardHeader, IconButton, Fab,
-  Avatar, ListItemText, ListItem, Drawer, Divider, Paper, Grow, Container, Menu, MenuItem
+  Button, Tooltip, Typography, AppBar, Card, CardHeader, IconButton,
+  Avatar, ListItemText, ListItem, Drawer, Menu, MenuItem, Fab
 } from '@material-ui/core';
-import { LinkedIn, Mail, Close, ContactSupport } from '@material-ui/icons';
-import MenuIcon from '@material-ui/icons/Menu'
-// import Alert from '@material-ui/lab/Alert';
-// import {Close,Share,FileCopyOutlined, Refresh} from '@material-ui/icons';\
+import { Close, ContactSupport } from '@material-ui/icons';
 import { withStyles } from "@material-ui/core/styles";
-import { throttle } from "lodash";
+import MenuIcon from '@material-ui/icons/Menu'
 import { styles } from "./UIComponents"
-class Input extends React.Component {
+class NewInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       up: false,
+      productList: ["Airpod", "Apple Airpod", "Apple Airpod 1", "Apple Airpod 2"],
       navigation: ["About", "Quality Control", "Train the model", "Help"],
       show: false,
       anchorEl: null
@@ -59,8 +57,11 @@ class Input extends React.Component {
         break;
     }
   }
+  componentDidMount() {
+    console.log(window.innerWidth)
+  }
   render() {
-    const { navigation, up, anchorEl } = this.state
+    const { productList, navigation, up, anchorEl } = this.state
     const { classes } = this.props
     const date = new Date()
     return (
@@ -84,7 +85,7 @@ class Input extends React.Component {
             ))}
           </Drawer>
           <div className={classes.headerText}>
-            <img src="https://pngimg.com/uploads/amazon/amazon_PNG5.png" width="25px" height="25px" className={classes.logo} alt="logo"></img>
+            <img src="https://pngimg.com/uploads/amazon/amazon_PNG5.png" width="25px" height="25px" className={classes.logo} alt="logo" onClick={() => { this.props.history.push("/") }}></img>
             {navigation.map((e, i) =>
               <IconButton style={{ borderRadius: 0 }} key={i} onClick={() => this.handleOnClickScroll(e)}>
                 <Typography variant="body2" className={classes.appBarText}>{e}</Typography>
@@ -109,59 +110,28 @@ class Input extends React.Component {
             <Button className={classes.button} style={{ margin: 0 }}>Sign in</Button>
             <MenuIcon onClick={this.toggleDrawer(true)} className={classes.menuButton} />
           </div>
-
         </AppBar>
-        <div>
-          <Grow in >
-            <Container className={classes.container} maxWidth={false}>
-              <img alt="Amazon-full-logo" src="https://1000logos.net/wp-content/uploads/2016/10/Amazon-Logo.png" className={classes.containerLogo} ></img>
-              <span><h2>A <span style={{ color: "#FF9900" }}>customer</span>-centric ecommerce company</h2></span>
-              <br />
-            </Container>
-          </Grow>
-          <div className={classes.featureContainer} ref={this.feature}>
-            <Grow in timeout={1000} >
-              <div className={classes.introMode}>
-                <div className={classes.introModeChild}>
-                  <Typography className={classes.headingText} align="left" variant="h5">Who are we ?</Typography>
-                  <br />
-                  <Typography variant="subtitle1" align="justify" paragraph>
-                    We are a technology company with the operation of Jeff Bezos and founded in 1994. We are known as the world's largest online marketplace and the biggest cloud provider (Amazon Web Service – AWS).
-                                    </Typography>
+        <div className={classes.mappingItemContainer}>
+          <h2 style={{ textAlign: "left", width: "400px" }}>Order awaiting quality control
+            </h2>
+          <Tooltip placement="bottom" arrow title={<Typography>Refer to the live quality control testing of randomly selective order, click 'Scan this order' to proceed</Typography>} open={true} >
+            <div>
+              {productList.map((p, i) => (
+                <div key={i} className={classes.cardContainer}>
+                  <Card variant="outlined" className={classes.card}>
+                    <CardHeader className={classes.cardHead}
+                      title={p}
+                      avatar={<Avatar><img alt="airpod" src="https://i1.pngguru.com/preview/378/338/511/apple-airpods-headphones-wireless-iphone-elago-usams-bluetooth-apple-airpods-2-png-clipart.jpg" style={{ width: "40px", height: "40px" }} ></img></Avatar>}
+                      subheader={date.getFullYear()}
+                      action={<Button className={classes.button} onClick={() => { this.orderPlaced() }}>Scan this order</Button>}
+                    >
+                    </CardHeader>
+                  </Card>
+                  <span className={classes.breaker}></span>
                 </div>
-                <div>
-                  <img className={classes.modeDemo} src="https://image.cnbcfm.com/api/v1/image/104864793-RTX3K2U2-amazon.jpg?v=1583359990&w=1600&h=900"></img>
-                </div>
-                <br />
-              </div>
-            </Grow>
-            <Grow in timeout={2000}>
-              <div className={classes.introMode}>
-                <div className={classes.introModeChild}>
-                  <Typography className={classes.headingText} align="left" variant="h5">Our mission</Typography>
-                  <br />
-                  <Typography variant="subtitle1" paragraph align="justify">
-                    From the first day of creation, we prouded to be a customer-centric company. We gurantee to provide you with the best experience!
-                  </Typography>
-                </div>
-                <div>
-                  <img className={classes.modeDemo} src="https://australianseller.com.au/wp-content/uploads/2018/07/amazon-customer-service-tips-670x335.jpg"></img>
-                </div>
-
-                <br />
-              </div>
-            </Grow>
-          </div>
-          <div className={classes.aboutContainer} ref={this.about}>
-            <div className={classes.about}>
-              <Typography align="left" variant="h5">About this page<span><IconButton onClick={() => window.location = 'https://www.linkedin.com/in/huu-khang-nguyen-bb271a184/'}><LinkedIn></LinkedIn></IconButton>
-                <IconButton href="mailto:huukhang1512@gmail.com"><Mail></Mail></IconButton></span></Typography>
-              <Divider />
-              <br />
-              <Typography align="left" variant="subtitle1">Copyright © Amazon {date.getFullYear()}<span>
-              </span></Typography>
+              ))}
             </div>
-          </div>
+          </Tooltip>
           <Tooltip title="Click to get support from our chatbot !" placement="left">
             <Fab variant="extended" color="primary" aria-label="add" className={classes.speedDial}>
               <ContactSupport style={{ marginRight: 1 }} />
@@ -173,4 +143,5 @@ class Input extends React.Component {
     )
   }
 }
-export default withRouter(withStyles(styles)(Input));
+export default withRouter(withStyles(styles)(NewInput));
+

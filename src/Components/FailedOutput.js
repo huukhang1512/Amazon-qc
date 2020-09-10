@@ -32,6 +32,7 @@ class FailedOutput extends React.Component {
         const { classes } = this.props
         return (
             <div className={classes.inputField}>
+                <h1 style={{ textAlign: "center", width: "100%" }}>Scan for flaws result</h1>
                 <Clear style={{ width: "400px", height: "400px", color: "#c91c1c" }} />
                 <h1>The product has failed the 2nd QC, picking another product and re-run the test in... {timeOut / 1000}</h1>
             </div>

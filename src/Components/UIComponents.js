@@ -5,7 +5,7 @@ export const styles = theme => ({
       height:"100vh",
       display : "flex",
       flexDirection: "column",
-      position : "fixed",
+      position : "absolute",
       overflowX : "hidden",
     },
     inputField: {
@@ -13,7 +13,29 @@ export const styles = theme => ({
         width: '100vw',
         position: "fixed",
         alignItems: 'center',
-        top : "20%",
+        top : "15%",
+    },
+    progress: {
+      backgroundColor : "#edeaea",
+      maxWidth : "90%",
+      flexGrow: 1,
+    },
+    checking:{
+      marginBottom : 10, 
+    },
+    flawProgress:{
+      backgroundColor : "#edeaea",
+      maxWidth : "90%",
+      marginLeft : 8,
+      flexGrow: 1
+    },
+    progressContainer:{
+      display : "flex",
+      marginTop : "10%",
+      marginLeft : "10%",
+      width : "90%",
+      flexDirection: "column",
+      position :"relative",
     },
     inputName:{
       color : "white",
@@ -60,7 +82,7 @@ export const styles = theme => ({
       flexDirection: "column",
       position :"relative",
       height : "87vh",
-      width: "55vw",
+      width: "50vw",
       [theme.breakpoints.down('sm')]: {
         width : "90vw",
         height : "85vh"
@@ -117,15 +139,13 @@ export const styles = theme => ({
       width : "100%",
     },
     button: {
-      background: 'linear-gradient(45deg, #545454 30%, #333333 90%)',
       border: 0,
       borderRadius: 10,
-      color: '#edeaea',
+      color: '#b57129',
       height: 40,
       fontWeight: "bolder",
-      width: 190,
       padding: '0 25px',
-      margin : "20px 60px",
+      margin : "20px 20px",
       '&:hover' : {
         boxShadow: '5px 5px 5px 0 rgba(0,0,0,.3)',
       },
@@ -187,9 +207,8 @@ export const styles = theme => ({
     },
     speedDial: {
       position: 'fixed',
-      height: "90vh",
       bottom: theme.spacing(2),
-      right: theme.spacing(1),
+      right: theme.spacing(2),
     },
     slider:{
       position: 'fixed',
@@ -335,22 +354,36 @@ export const styles = theme => ({
       fontWeight: "bold",
     },
     appBarText:{
+      margin : "0 12px",
       cursor : "pointer", 
-      color : "#edeaea",
+      color : "#848484",
+      [theme.breakpoints.down('sm')]: {
+        display : "none" 
+      },
+      '&:hover' : {
+        color : "#edeaea"
+      },
     },
     redirectButton:{
       borderRadius :"25em",
       padding :"10px 40px",
+      display : "flex",
       marginTop : "3em",
+      width : "400px",
       color : "#edeaea",
       background : 'linear-gradient(45deg, #545454 30%, #333333 90%)',
     },
     container:{
       padding: "7em 0",
+      background : 'linear-gradient(45deg, #545454 60%, #333333 40%)',
+      opacity : "20%",
       [theme.breakpoints.down('sm')]: {
         padding: "5em 0",
       },
     },
+    containerLogo:{width : "30%", [theme.breakpoints.down('sm')]: {
+      width : "60%"
+    },},
     introMode:{
       width : "90vw",
       margin : "4%",
@@ -384,6 +417,11 @@ export const styles = theme => ({
         float : "none",
       },
     },
+    tooltip:{
+      [theme.breakpoints.down('md')]: {
+        display : "none"
+      },
+    },
     headingText:{
       color : "#535353",
       fontWeight: "bold",
@@ -395,6 +433,8 @@ export const styles = theme => ({
     },
     menuButton:{
       display : "none",
+      cursor : "pointer",
+      margin : 5,
       color : "#edeaea",
       [theme.breakpoints.down('sm')]: {
         display : "inline"
