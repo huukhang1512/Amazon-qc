@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Amazon-qc/static/css/main.c8cbea65.chunk.css",
-    "main.js": "/Amazon-qc/static/js/main.a47d2fdb.chunk.js",
-    "main.js.map": "/Amazon-qc/static/js/main.a47d2fdb.chunk.js.map",
+    "main.js": "/Amazon-qc/static/js/main.0bf9696c.chunk.js",
+    "main.js.map": "/Amazon-qc/static/js/main.0bf9696c.chunk.js.map",
     "runtime-main.js": "/Amazon-qc/static/js/runtime-main.75c2b791.js",
     "runtime-main.js.map": "/Amazon-qc/static/js/runtime-main.75c2b791.js.map",
     "static/js/2.e81759df.chunk.js": "/Amazon-qc/static/js/2.e81759df.chunk.js",
     "static/js/2.e81759df.chunk.js.map": "/Amazon-qc/static/js/2.e81759df.chunk.js.map",
     "index.html": "/Amazon-qc/index.html",
-    "precache-manifest.5844e3437273f08ffecc6e2e2bcfe2e8.js": "/Amazon-qc/precache-manifest.5844e3437273f08ffecc6e2e2bcfe2e8.js",
+    "precache-manifest.5ab1f7bbb352806b65b21428a3c6fded.js": "/Amazon-qc/precache-manifest.5ab1f7bbb352806b65b21428a3c6fded.js",
     "service-worker.js": "/Amazon-qc/service-worker.js",
     "static/css/main.c8cbea65.chunk.css.map": "/Amazon-qc/static/css/main.c8cbea65.chunk.css.map",
     "static/js/2.e81759df.chunk.js.LICENSE.txt": "/Amazon-qc/static/js/2.e81759df.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.75c2b791.js",
     "static/js/2.e81759df.chunk.js",
     "static/css/main.c8cbea65.chunk.css",
-    "static/js/main.a47d2fdb.chunk.js"
+    "static/js/main.0bf9696c.chunk.js"
   ]
 }
