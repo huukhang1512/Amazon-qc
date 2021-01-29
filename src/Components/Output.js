@@ -24,7 +24,7 @@ class Output extends React.Component {
         <div className={classes.inputField}>
           <h1 style={{ textAlign: "center", width: "100%" }}>Scan for flaws result</h1>
           <CheckCircleOutline style={{width : "400px", height : "400px", color : "#006000"}}/>
-          <h1>This product has passed the 2nd QC,<br/> proccess to the SLAM department</h1>
+          <h1>This product has passed the 2nd QC,<br/>  proccess to the SLAM department</h1>
           <div className={classes.mappingItemContainer}>
           {productList.map((p, i) => (
             <div key={i} className={classes.cardContainer}>

@@ -1,7 +1,6 @@
 import React from 'react';
 import Input from "./Components/Input";
 import NewInput from "./Components/NewInput";
-import Output from "./Components/Output";
 import Help from "./Components/Help"
 import Proccess from "./Components/Process";
 import TrainTheModel from "./Components/TrainTheModel";

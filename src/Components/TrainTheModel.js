@@ -4,12 +4,11 @@ import { withRouter } from "react-router-dom";
 //UI
 import {
     Button, Tooltip, Typography, AppBar, Card, CardHeader, IconButton,
-    Avatar, ListItemText, ListItem, Drawer, Divider, Paper, Grow, Container
+    Avatar, ListItemText, ListItem, Drawer, Divider, Paper, Grow, Container, Menu, MenuItem
 } from '@material-ui/core';
-import { CheckCircleOutline, LinkedIn, Mail, Menu, Close } from '@material-ui/icons';
-// import Alert from '@material-ui/lab/Alert';
-// import {Close,Share,FileCopyOutlined, Refresh} from '@material-ui/icons';\
+import { CheckCircleOutline, LinkedIn, Mail, Close } from '@material-ui/icons';
 import { withStyles } from "@material-ui/core/styles";
+import MenuIcon from '@material-ui/icons/Menu'
 import { throttle } from "lodash";
 import { styles } from "./UIComponents"
 class TrainTheModel extends React.Component {
@@ -19,9 +18,15 @@ class TrainTheModel extends React.Component {
             up: false,
             navigation: ["About", "Quality Control", "Train the model", "Help"],
             show: false,
+            anchorEl : null,
         };
     }
-
+    handleClick = (event) => {
+        this.setState({ anchorEl: event.currentTarget })
+    }
+    handleClose = () => {
+        this.setState({ anchorEl: null })
+    };
     orderPlaced = () => {
         this.setState({ show: true })
     }
@@ -53,7 +58,7 @@ class TrainTheModel extends React.Component {
         }
     }
     render() {
-        const { navigation, up } = this.state
+        const { navigation, up, anchorEl } = this.state
         const { classes } = this.props
         const date = new Date()
         return (
@@ -84,8 +89,23 @@ class TrainTheModel extends React.Component {
                             </IconButton>)}
                     </div>
                     <div className={classes.headAvatarContainer}>
+                    <Button aria-controls="simple-menu" aria-haspopup="true" style={{ color: "#edeaea" }} onClick={this.handleClick}>
+              English (Default)
+            </Button>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={this.handleClose}
+            >
+              <MenuItem onClick={this.handleClose}>English</MenuItem>
+              <MenuItem onClick={this.handleClose}>Vietnamese</MenuItem>
+              <MenuItem onClick={this.handleClose}>Indonesian</MenuItem>
+              <MenuItem onClick={this.handleClose}>Nepali</MenuItem>
+            </Menu>
                         <Button className={classes.button} style={{ margin: 0 }}>Sign in</Button>
-                        <Menu onClick={this.toggleDrawer(true)} className={classes.menuButton} />
+                        <MenuIcon onClick={this.toggleDrawer(true)} className={classes.menuButton} />
                     </div>
                 </AppBar>
                 <Grow in>
